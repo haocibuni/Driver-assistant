@@ -1,0 +1,41 @@
+<!-- 当前默认未没有提交表单 -->
+<view wx:if="{{!success}}">
+  <!-- 我的地址 通过点击容器调用函数获取 -->
+  <view class="row">
+    <label class='title'>我的地址:</label>
+    <view class='info' bindtap='handleAddressClick'>{{address}}</view>
+  </view>
+  <!-- //类型 通过单选按钮获取 -->
+  <view class="row">
+    <label class='title'>类型:</label>
+    <view class='info'>
+       <radio-group bindchange="handleTypeChange">
+         <label>
+             <radio checked='true' value='buy'>求购</radio>
+             <radio value='sell'>转让</radio>
+          </label>
+       </radio-group>
+    </view>
+  </view>
+  <!-- //说明 通过输入文本框获取 -->
+  <view class="row">
+    <label class='title'>说明:</label>
+    <view class='info'>
+        <input class='info-input' bindinput='handleMessageChange' placeholder="填写您的具体需求。" auto-focus/>
+    </view>
+  </view>
+  <!-- //联系方式 通过输入文本框获取 -->
+  <view class="row">
+    <label class='title'>联系方式:</label>
+     <view class='info'>
+        <input class="info-input" bindinput='handleContactChange' placeholder="填写您的联系方式。" auto-focus/>
+      </view>
+  </view>
+  <view class='submit-button' bindtap="handleSubmit">发布信息</view>
+</view>
+<!-- 提交表单成功后显示返回首页按钮 调用handlebacktap函数 -->
+<view wx:if="{{success}}" class="success">
+  <view class="congratulation"> <icon class="success-icon" type="success" size="23"/>
+  恭喜您，提交成功！</view>
+  <button type="default" class='backhome-button' bindtap='handleBackTap' > 返回首页</button>
+</view>

@@ -1,0 +1,14 @@
+<!-- 地图容器中放入地图组件 -->
+
+<view class="map-container"  >
+   <map id="mymap" controls='{{controls}}' bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="handleMarkerTap" longitude="{{longitude}}" latitude="{{latitude}}" scale="18" style="width: 100%; height:100%" show-location  ></map>
+</view>
+<!-- /*插入两个页面链接分别指向publish和search -->
+<view class='btns'>
+      <view class='btn btn-public'>
+        <navigator url="/pages/publish/publish">发布</navigator>
+      </view>
+      <view class='btn'>
+       <navigator url="/pages/search/search">附近</navigator>
+      </view>
+</view>

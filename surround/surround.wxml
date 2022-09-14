@@ -1,0 +1,36 @@
+
+<!--地图容器-->
+<view class="map-container">
+  <map 
+   markers="{{markers}}"
+   bindmarkertap="handleMarkerTap"
+   style="width:100%;height:450px;"
+   longitude="{{longitude}}"
+   latitude="{{latitude}}" scale='16'
+   enable-traffic=true
+   show-location
+>
+<cover-view class="pop-up" hidden="{{modelHidden}}">
+  <cover-view class="pop-up-container">
+    <cover-view class="top-title">报告老板：以下为该维修店详细信息</cover-view>
+    <cover-view class="tip-title"> 店名：{{detailId.title}} </cover-view> 
+    <cover-view class="tip-title"> 地址：{{detailId.address}} </cover-view> 
+    <cover-view class="tip-title"> 当前距离：{{detailId._distance}}米 </cover-view> 
+    <cover-view class="tip-title" > 联系方式：{{detailId.tel}} </cover-view> 
+    <button bindtap='callGetPhone' data-getPhone='{{detailId.tel}}' class="tel">联系对方</button>
+ </cover-view>
+  <cover-image class="close" src="/resources/close.png" bindtap="closePopUp"></cover-image>
+</cover-view>
+</map>
+</view>
+<view class='btns'>
+      <view class='btn btn-public'>
+        <navigator bindtap="nearby_search">维修</navigator>
+      </view>
+      <view class='btn' wx:if="{{success}}">
+       <navigator bindtap="rescue">救援</navigator>
+      </view>
+      <view class='btn' wx:if="{{!success}}">
+       <navigator url="/rescue/rescue">救援(请填写信息)</navigator>
+      </view>
+</view>

@@ -1,0 +1,29 @@
+.map-container
+{ position: absolute;
+  top:0;
+  bottom:40px;
+  left:0;
+  right:0;
+  background:#fff;
+
+}
+.btns
+{ position:absolute;
+  display: flex;
+  left:0;
+  right:0;
+  bottom:0;
+  line-height:40px;
+  background: #03bbd5;
+  color:#fff;
+
+}
+.btn
+{
+  flex:1;
+  text-align:center;
+}
+.btn-public
+{
+  background: #ff9700;
+}

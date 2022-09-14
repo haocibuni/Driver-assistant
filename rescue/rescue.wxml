@@ -1,0 +1,52 @@
+<!-- 当前默认未没有提交表单 -->
+<view wx:if="{{!success}}">
+  <!-- 我的地址 通过点击容器调用函数获取 -->
+  <view class="row">
+    <label class='title'>姓名:</label>
+     <view class='info'>
+        <input class="info-input" bindinput='handleNameChange' placeholder="填写您的姓名。" auto-focus/>
+      </view>
+  </view>
+  <!-- //类型 通过单选按钮获取 -->
+  <view class="row">
+    <label class='title'>病史:</label>
+    <view class='info'>
+        <input class='info-input' bindinput='handleMessageChange' placeholder="填写您的病史。" auto-focus/>
+    </view>
+  </view>
+  <view class="row">
+    <label class='title'>出生日期:</label>
+    <view class='info'>
+      <picker mode="date" value="{{date}}" start="1900-01-01" bindchange="handleDateChange"><view>
+       {{date}}
+    </view></picker>
+    </view>
+  </view>
+  <view class="row">
+    <label class='title'>血型:</label>
+    <view class='info'>
+       <radio-group bindchange="handleTypeChange">
+         <label>
+             <radio value='A'>A</radio>
+             <radio value='B'>B</radio>
+             <radio value='O'>O</radio>
+             <radio value='AB'>AB</radio>
+          </label>
+       </radio-group>
+    </view>
+  </view>
+  <view class="row"><button size="mini" class="add " bindtap='addList'>增加联系人</button></view>
+  <view class="row" wx:for="{{lists}}" wx:key="{{index}}">
+    <label class='title'>紧急联系人:</label>
+    <view class='info'>
+        <input class='info-input' data-id="{{index}}" bindinput='handlePeopleChange' placeholder="填写您的紧急联系人电话。" auto-focus/>
+    </view>
+  </view>
+  <view class='submit-button' bindtap="handleSubmit">发布信息</view>
+</view>
+<!-- 提交表单成功后显示返回首页按钮 调用handlebacktap函数 -->
+<view wx:if="{{success}}" class="success">
+  <view class="congratulation"> <icon class="success-icon" type="success" size="23"/>
+  恭喜您，提交成功！</view>
+  <button type="default" class='backhome-button' bindtap='handleBackTap' > 返回首页</button>
+</view>

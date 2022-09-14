@@ -1,0 +1,36 @@
+{
+  "pages": [
+    
+    "surround/surround",
+    "pages/index/index",
+    "map/map",
+    "pages/publish/publish",
+    "pages/search/search",
+    "pages/detail/detail",
+    "rescue/rescue"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "qcloudsms": {
+      "version": "1.0.5",
+      "provider": "wx4718484ed6fb9393"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#03bbd5",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#4682B4",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

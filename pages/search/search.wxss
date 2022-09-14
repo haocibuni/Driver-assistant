@@ -1,0 +1,39 @@
+page {
+  background: #eee;
+}
+.search-header {
+  position:relative;
+  height:37px;
+  background:#03bbd5;
+  padding-top:7px;
+}
+.search-btn {
+  position:absolute;
+  right:0;
+  top:0;
+  color:#fff;
+  width: 60px;
+  line-height:44px;
+  text-align: center;
+}
+.search-input{
+  margin:0 60px 0 10px;
+  height: 30px;
+  background:#fff;
+  border-radius: 4px;
+  padding:0 5px;
+}
+.item {
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.item-address {
+  font-size:12px;
+  color:#ff9700;
+  margin-bottom:8px;
+}
+.item-message{
+  font-size:18px;
+  color:#777;
+}
